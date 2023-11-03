@@ -26,15 +26,15 @@ export default function Form({ onSubmit }) {
           value={postalcode}
           onChange={(e) => setPostalcode(e.target.value)}
         />
+        <div className="mx-2">
+          <button
+            type="submit"
+            className="py-2 px-2 rounded bg-white text-base"
+          >
+            Search
+          </button>
+        </div>
       </form>
-      <div className="mx-2 my-4">
-        <button
-          type="submit"
-          className="py-2 px-4 rounded bg-white text-base"
-        >
-          Search
-        </button>
-      </div>
     </div>
   );
 }
