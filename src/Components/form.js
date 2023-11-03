@@ -10,7 +10,7 @@ export default function Form({ onSubmit }) {
   };
 
   return (
-    <div className="flex justify-center basis-1/4 items-center py-4 px-8 h-40">
+    <div className="flex flex-col md:flex-row justify-center basis-1/4 items-center py-4 px-8 h-40">
       <form
         onSubmit={handleSubmit}
         className="flex bg-white px-4 py-2 rounded-full"
@@ -27,6 +27,14 @@ export default function Form({ onSubmit }) {
           onChange={(e) => setPostalcode(e.target.value)}
         />
       </form>
+      <div className="mx-2 my-4">
+        <button
+          type="submit"
+          className="py-2 px-4 rounded bg-white text-base"
+        >
+          Search
+        </button>
+      </div>
     </div>
   );
 }
