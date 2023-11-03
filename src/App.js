@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import From from "./Components/form";
+import List from "./Components/list";
 
 function App() {
+  const [postalCode, setPostalCode] = useState("");
+
+  const handleFormSubmit = (code) => {
+    setPostalCode(code);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App h-screen flex flex-col bg-center md:bg-cover"
+      style={{
+        "background-image": "url(" + require("./Asset/background.png") + ")",
+      }}
+    >
+      <From onSubmit={handleFormSubmit} />
+      <List postalCode={postalCode} setPostalCode={setPostalCode} />
     </div>
   );
 }
